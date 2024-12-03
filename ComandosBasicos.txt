@@ -21,14 +21,39 @@ COMANDOS BASICOS
 -mkdir: Crear una carpetas
 -ls -a: Mostrar todos los archivos ocultos
 #En la  carpeta .git (esta oculto) se guarda toda la informacion del proyecto de git, versiones usuarios etc
-
 -code .: abrir en que carpeta estoy
 -git status: muestra el estado de los archivos, si estan actualizados, traquedos, commit etc
 #untracked file: son los archivos los cuales git no les esta haciendo un seguimiento, usamos git add para agregar archivos
--git add "nombrearchivo": Se indica que archivos se entran para la etapa de stage
 
+STAGE
+-git add "nombrearchivo": Se indica que archivos se entran para la etapa de stage
 #Stage: Estado de espera entre subir el archivo (commit) al servidor. 
 #cuando se indica get add, se indica que esa version del archivo es la que se va subir, esa modificacion del archivo es lo que se sube
 #Si se realiza un cambio despues de indicar el get add, esta modificacion no se actulizara al stage. se debera ejecutar otra vez git add
 
+COMMIT
 git commit -m "Commit inicial"
+#comando para realizar el commit de manera directa, se indica el comentario entre comillas
+git commit
+#Comando que abrira el editor de texto en el cual se podra personalizar el mensaje
+
+BORRAR ARCHIVOS
+rm "archivo"
+git add "archivo"
+#para borar archivos, se sigue el mismo procedimiento de realizar el git add y despues commit. Es como si fuera una modificacion mas
+se puede ejecutar: git rm "nombre archivo"
+
+RECUPERAR ARCHIVOS BORRADOS
+git restore --stage "archivo" #recuperamos un archivo borrado a la etapa de stage
+#Despues para sacar de la etapa de stage y recuperarlo del todo se usa:
+git restore "archivo"
+
+MOVER O CAMBIAR NOMBRES
+mv "archivo" "archivo.txt" #se cambia el nombre de archivo a archivo.txt
+#git entiende que se elimino archivo y se creo uno nuevo con el nombre de archivo. Por lo tanto se debe realizar nuevamente el git add
+git add archivos archivos.txt #se agregan los dos archivos a la etapa de stage separandolos por un espacio. POr ultimo se debe realizar el commit
+git mv archivos archivos.txt
+
+IGNORAR ARCHIVOS
+#Para ignorar una archivo para que no se realice un commit por accidente, bases de datos o contraseñas
+#se debe crear un archivo llamado gitignore, y en este se debe indicar los archivos a ignorar
