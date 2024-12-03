@@ -72,7 +72,21 @@ git log #ver el historial de manera completa
 git log --oneline # historial de manera mas resumida
 
 TRABAJO RAMIFICADO
-Cuando se trabaja con diferentes personas para controlar los cambios se deben crear ramas, en estas no se modificara nada nuevo que realizan las otras
+#Cuando se trabaja con diferentes personas para controlar los cambios se deben crear ramas, en estas no se modificara nada nuevo que realizan las otras
 #personas hasta que se unan las ramas. La rama principal sera por defecto main.
 git branch #para ver en que rama nos encontramos ahora mismo
 git checkout -b nombrerama #para crear una nueva rama llamada nombrerama
+#Cada rama tiene su version de los archivos, por lo tanto si se cambia de rama los archivos volveran a su version que estan en la rama principal
+#Explicacion: un archivo con solo "hola" en la rama principal, si se cambia a la ramasecundaria y se modifica a "hola como estas". al volver a la rama
+#Principal solo tendra hola, pues la modificacion estaria en la ramasecundaria. Esto ocurre activamente en tiempo real hasta en los archivos que ya estan abiertos
+#Para traer los datos de la ramasecundaria a la principal se usa
+git merge ramasecundaria #usandola en la rama principal, se unira en una sola rama
+
+SUBIR CODIGO A GITHUB
+#Se crea un repositorio a github. una vez creado se ejecuta el codigo con el link:
+git remote add origin https://github.com/MaickMos/GitTest.git #-git remote: indica que se tiene un servidor remoto
+#-add orgin: indica de a donde se debera cargar y descargar la informacion del codigo
+git push -u origin main
+Se le dice donde guarde los cambios que seria en la rama principal (main), pero como aun no esta creada en el repositorio en github la creamos con este comando
+- git push: comando para subir los cambios
+- -u origin main: con -u creamos la rama, con origin le indicamos donde debe ser creada la rama y main el nombre de la rama
