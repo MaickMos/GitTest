@@ -20,12 +20,15 @@ COMANDOS BASICOS
 -cd ..: salir de una carpetas
 -mkdir: Crear una carpetas
 -ls -a: Mostrar todos los archivos ocultos
-#En la carpeta .git (esta oculto) se guarda toda la informacion del proyecto de git, versiones usuarios etc
+#En la  carpeta .git (esta oculto) se guarda toda la informacion del proyecto de git, versiones usuarios etc
 
 -code .: abrir en que carpeta estoy
 -git status: muestra el estado de los archivos, si estan actualizados, traquedos, commit etc
 #untracked file: son los archivos los cuales git no les esta haciendo un seguimiento, usamos git add para agregar archivos
 -git add "nombrearchivo": Se indica que archivos se entran para la etapa de stage
 
-#Stage: es una etapa entre los datos del computador y el commit, se compara la version del computador y se registra que cambios se van a realizar en el servidor
-#Commit: Es la version donde se indican los cambios que se realizaron en el archivo
+#Stage: Estado de espera entre subir el archivo (commit) al servidor. 
+#cuando se indica get add, se indica que esa version del archivo es la que se va subir, esa modificacion del archivo es lo que se sube
+#Si se realiza un cambio despues de indicar el get add, esta modificacion no se actulizara al stage. se debera ejecutar otra vez git add
+
+git commit -m "Commit inicial"
