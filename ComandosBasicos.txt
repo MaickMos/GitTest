@@ -56,4 +56,23 @@ git mv archivos archivos.txt
 
 IGNORAR ARCHIVOS
 #Para ignorar una archivo para que no se realice un commit por accidente, bases de datos o contraseñas
-#se debe crear un archivo llamado gitignore, y en este se debe indicar los archivos a ignorar
+#se debe crear un archivo llamado gitignore, y en este se debe indicar los nombres de los archivos a ignorar
+
+STATUS CORTO
+#se usa normalmente git status, pero da informacion de mas. por lo tanto si se usa: git status -s: se podra ver de forma reducida el estado
+de los archivos. En verde los que estan en stage, listos para realizar el commit. En rojo los no estan listos para ser subidos y falta un git add
+M:modificate D:Delete A:add(en stage)
+
+VISUALIZAR CAMBIOS
+git diff #muestra el texto que se esta cambiando, en rojo lo que se borra, en verde lo nuevo. Para salir se oprime la letra U o Q
+git diff --stage: Solo se muestran los cambios que estan en etapa en stage
+
+VER HISTORIAL
+git log #ver el historial de manera completa
+git log --oneline # historial de manera mas resumida
+
+TRABAJO RAMIFICADO
+Cuando se trabaja con diferentes personas para controlar los cambios se deben crear ramas, en estas no se modificara nada nuevo que realizan las otras
+#personas hasta que se unan las ramas. La rama principal sera por defecto main.
+git branch #para ver en que rama nos encontramos ahora mismo
+git checkout -b nombrerama #para crear una nueva rama llamada nombrerama
