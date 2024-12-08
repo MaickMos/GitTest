@@ -86,7 +86,12 @@ SUBIR CODIGO A GITHUB
 #Se crea un repositorio a github. una vez creado se ejecuta el codigo con el link:
 git remote add origin https://github.com/MaickMos/GitTest.git #-git remote: indica que se tiene un servidor remoto
 #-add orgin: indica de a donde se debera cargar y descargar la informacion del codigo
-git push -u origin main
+git push -u origin main #Solo se hace una vez al inicio
 Se le dice donde guarde los cambios que seria en la rama principal (main), pero como aun no esta creada en el repositorio en github la creamos con este comando
 - git push: comando para subir los cambios
 - -u origin main: con -u creamos la rama, con origin le indicamos donde debe ser creada la rama y main el nombre de la rama
+#Para subir finalmente al servidor, se debe usar:
+git push
+#En algunos casos usar 
+git push -u origin main
+Para indicar que la rama principal donde se guardaran los cambios sera la main
