@@ -25,6 +25,9 @@ COMANDOS BASICOS
 -git status: muestra el estado de los archivos, si estan actualizados, traquedos, commit etc
 #untracked file: son los archivos los cuales git no les esta haciendo un seguimiento, usamos git add para agregar archivos
 
+INICIAR UN GIT
+git init: crea el repositorio con el nombre de la carpeta
+
 STAGE
 -git add "nombrearchivo": Se indica que archivos se entran para la etapa de stage
 #Stage: Estado de espera entre subir el archivo (commit) al servidor. 
